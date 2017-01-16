@@ -279,7 +279,7 @@ static NSString *const playbackRate = @"rate";
     //Perform on next run loop, otherwise onVideoLoadStart is nil
     self.onVideoLoadStart(@{@"src": @{
                                 @"uri": [source objectForKey:@"uri"],
-                                @"type": [source objectForKey:@"type"],
+                                @"type": [source objectForKey:@"type"]?[source objectForKey:@"type"]:[NSNull null],
                                 @"isNetwork": [NSNumber numberWithBool:(bool)[source objectForKey:@"isNetwork"]]},
                             @"target": self.reactTag
                             });
